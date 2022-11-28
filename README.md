@@ -1,0 +1,1 @@
+Code that, on the one hand, uses an ESP32 to send a signal via WiFi and, on the other hand, receives this signal in a Python program to enable the connection to a phone using ready-made libraries and the Twilio website resource.

@@ -2,6 +2,10 @@
 	from secrets import account_sid, token
 	from twilio.rest import Client 
 	
+	print("Aguardando o pressionamento do botao")
+	
+	while (button==1){
+		
 	account_sid = ""  
 	auth_token = ""
 	meu_numero = "" //informar numero que ira receber a ligacao
@@ -22,4 +26,5 @@
 	  from = numero_twilio //este é o numero que foi habilitado no site do Twilio
 	  twinl=  "" //forma de escrever a mensagem que o Twilio disponibiliza para voce
 	
+	}
 	}

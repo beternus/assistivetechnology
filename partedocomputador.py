@@ -1,10 +1,9 @@
 #  https://www.twilio.com/docs/voice/twinl
 	from secrets import account_sid, token
 	from twilio.rest import Client 
-	int button
 	
 	import serial
-	button = serial.Serial(0)
+	button = serial.Serial(0)  // a funcao de botao é receber o sinal do usuario
 
 	print("Aguardando o pressionamento do botao")
 	

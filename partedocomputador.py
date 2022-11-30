@@ -1,7 +1,11 @@
 #  https://www.twilio.com/docs/voice/twinl
 	from secrets import account_sid, token
 	from twilio.rest import Client 
+	int button
 	
+	import serial
+	button = serial.Serial(0)
+
 	print("Aguardando o pressionamento do botao")
 	
 	while (button==1){

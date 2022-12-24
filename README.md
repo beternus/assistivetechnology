@@ -1,1 +1,5 @@
-Code that, on the one hand, uses an ESP32 to send a signal via WiFi and, on the other hand, receives this signal in a Python program to enable the connection to a phone using ready-made libraries and the Twilio website resource.
+Interface.py -> software para fazer a parte de visão computacional e processamento de imagens
+
+tela1.py  - > faz a tela de input, tela de inicialização, explicada no artigo
+
+tela2.py -> faz a tela de output, explicada no artigo

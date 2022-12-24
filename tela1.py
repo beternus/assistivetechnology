@@ -1,3 +1,5 @@
+//All the credits to Pietro Dal Pizzol and Francisco Castro by the software development
+//Contact and information about the code: bernardoternus@gmail.com
 # -*- coding: utf-8 -*-
 
 ################################################################################

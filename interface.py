@@ -1,4 +1,4 @@
-#from cProfile import label
+#from cProfile import label   
 from PySide2.QtWidgets import(QApplication, QMainWindow, QWidget, QLabel)
 from tela1 import Ui_Dialog
 #from tela2 import Ui_Form
@@ -8,7 +8,7 @@ from math import acos, degrees
 
 #from turtle import delay
 import time # Provides time-related functions
-import cv2 # OpenCV library
+import cv2 # OpenCV library      //importa as bibliotecas
 import mediapipe as mp
 import numpy as np
 #import RPi.GPIO as GPIO
@@ -32,13 +32,13 @@ import numpy as np
 #pwm2 = GPIO.PWM(23, 500)
 #pwm2.start(100)
 
-def calculate_angle(a,b,c):
+def calculate_angle(a,b,c):   //funcao que calcula o angulo de flexao/extensao
     a = np.array(a) # Primeiro
     b = np.array(b) # Segundo
     c = np.array(c) # último
     
     radians = np.arctan2(c[1]-b[1], c[0]-b[0]) - np.arctan2(a[1]-b[1], a[0]-b[0])
-    angle = np.abs(radians*180.0/np.pi)
+    angle = np.abs(radians*180.0/np.pi)   //aparentemente conversao para unidade de referencia
     
     if angle > 180.0:
         angle = 360-angle
@@ -82,7 +82,7 @@ class tela1(QMainWindow, Ui_Dialog):
         repeticoes = int(repeticoes)
 
         global anguloextensao
-        anguloextensao = self.lineEdit_2.text()
+        anguloextensao = self.lineEdit_2.text()    //calcula o angulo de extensao
         anguloextensao = int(anguloextensao)
 
         global anguloflexao
@@ -133,8 +133,7 @@ class tela1(QMainWindow, Ui_Dialog):
                     
                     # Calcular angulo
                     angle = degrees(acos((l1**2 + l3**2 - l2**2) / (2 * l1 * l3)))
-                    
-                    
+                                        
                     if angle >= 150:
                         up = True
                         
@@ -160,7 +159,6 @@ class tela1(QMainWindow, Ui_Dialog):
                         self.w.show()
                         self.close()
                         break
-                        
                         
                     #print("count: ", count)
                     # Vizualização
@@ -210,7 +208,6 @@ class tela1(QMainWindow, Ui_Dialog):
                     self.close()
                     break
                     
-            
             cap.release()
             cv2.destroyAllWindows()
             #cap.release()
@@ -220,9 +217,6 @@ class tela1(QMainWindow, Ui_Dialog):
         
         iniciar()
         
-
-        
-    
 class tela3(QMainWindow, Ui_Form):
     def __init__(self):
         super(tela3, self).__init__()
@@ -230,7 +224,6 @@ class tela3(QMainWindow, Ui_Form):
         self.setWindowTitle("Smart CPM")
 
         self.pushButton_2.clicked.connect(self.sair)
-
         self.pushButton.clicked.connect(self.reiniciar)
     
     def reiniciar(self):
@@ -244,7 +237,6 @@ class tela3(QMainWindow, Ui_Form):
     def sair(self):
         self.close()
         
-
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = tela1()
